@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/kharchenkolab/leidenAlg.svg?branch=master)](https://travis-ci.com/kharchenkolab/leidenAlg)
+[![<kharchenkolab>](https://circleci.com/gh/kharchenkolab/leidenAlg.svg?style=svg)](https://app.circleci.com/pipelines/github/kharchenkolab/leidenAlg)
 [![CRAN status](https://www.r-pkg.org/badges/version/leidenAlg)](https://cran.r-project.org/package=leidenAlg)
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/leidenAlg)](https://cran.r-project.org/package=leidenAlg)
 
@@ -21,21 +21,6 @@ For details on the algorithm, see ["From Louvain to Leiden: guaranteeing well-co
 
 For the original implementation in C++ with python bindings, see: https://github.com/vtraag/leidenalg
 
-## Installation
-
-To install the stable version from [CRAN](https://CRAN.R-project.org/package=leidenAlg), use:
-
-```r
-install.packages('leidenAlg')
-```
-
-To install the latest version, use:
-
-```r
-install.packages('devtools')
-devtools::install_github('kharchenkolab/leidenAlg', build_vignettes = TRUE)
-```
-
 ## Functions
 
 * `leiden.community()`: Detect communities using Leiden algorithm, output as `fakeCommunities` class for downstream use.
@@ -52,5 +37,5 @@ If you find `leidenAlg` useful for your publication, please cite:
 ```
 Peter Kharchenko, Viktor Petukhov and Evan Biederstedt (2021).
 leidenAlg: Implements the Leiden Algorithm via an R Interface. R
-package version 0.1.1. https://github.com/kharchenkolab/leidenAlg
+package version 1.0.0. https://github.com/kharchenkolab/leidenAlg
 ```

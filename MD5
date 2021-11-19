@@ -1,9 +1,9 @@
-71eb6e3a26fd075a49a3635dbe379293 *DESCRIPTION
+eea928ac18d1135451f960bbfb5916cb *DESCRIPTION
 2ba9350b8437b72364ee6b989360ddab *NAMESPACE
 9abae8f4fa21c6393a1bf46350b82997 *R/RcppExports.R
 02158fdd072c93be7fd32f2e4ec12c46 *R/communities.R
 f900d4b0e8687a1c4ee619e50b3dc873 *R/data.R
-982721726f22005e2e0117922cc9feb8 *README.md
+0bed7256f0b0c7eaf6281fe4c23fc486 *README.md
 a59fb5db2333062498c58fb450befc7e *data/exampleGraph.rda
 fedd22b3c3990e703c1924859e5325f4 *inst/COPYRIGHTS
 93f5444fce9e84567ecd3f5230be8b87 *man/as.dendrogram.fakeCommunities.Rd
@@ -14,7 +14,7 @@ b84fda1e6dcbd3ddfc0527e786b9c262 *man/find_partition.Rd
 712dbe8d1c87e1bcdf023b902ba6fdfb *man/rleiden.community.Rd
 a518721a6fcf63e7305453579d2b50f8 *src/Makevars
 2fd637c99a1417706a68de3176aac798 *src/Makevars.win
-5d375798c7e166ac7b69716bf0c4a316 *src/RcppExports.cpp
+408bfc527b104a4a9911722466d5acba *src/RcppExports.cpp
 870b11b5c6edc57349541126a419f135 *src/leiden.cpp
 dc6c3db9ec85634d1d8d6f39567fbe6b *src/leidenalg/CPMVertexPartition.cpp
 af2bf4f60b8ef563aac8c7ae3b6c570b *src/leidenalg/GraphHelper.cpp
