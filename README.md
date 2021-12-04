@@ -21,6 +21,46 @@ For details on the algorithm, see ["From Louvain to Leiden: guaranteeing well-co
 
 For the original implementation in C++ with python bindings, see: https://github.com/vtraag/leidenalg
 
+## Installation
+
+To install the stable version from [CRAN](https://CRAN.R-project.org/package=leidenAlg), use:
+
+```r
+install.packages('leidenAlg')
+```
+
+To install the latest version, use:
+
+```r
+install.packages('devtools')
+devtools::install_github('kharchenkolab/leidenAlg', build_vignettes = TRUE)
+```
+
+Note that this package depends on [igraph](https://CRAN.R-project.org/package=igraph), which requires various libraries to install correctly e.g. `libxml2`. Please see the installation instructions at that page for more details, along with the README [here](https://github.com/igraph/rigraph).
+
+Debian-based users of Linux can install the required packages via:
+
+```
+sudo apt-get update
+sudo apt-get install libxml2-dev libgmp-dev libglpk-dev
+```
+
+For users of Red Hat distributions, use the following command to install the required packages:
+
+```
+sudo yum update
+sudo yum install libxml2-devel gmp-devel glpk-devel
+```
+
+For Mac OS, the commands with the [Homebrew package manager](https://brew.sh/) are as follows:
+
+```
+brew update
+brew install libxml2 glpk gmp
+```
+ 
+**Note:** For Mac OS users, there is a guide for troubleshooting [here](https://github.com/kharchenkolab/leidenAlg/wiki/Installing-leidenAlg-for-Mac-OS) if issues arise. 
+
 ## Functions
 
 * `leiden.community()`: Detect communities using Leiden algorithm, output as `fakeCommunities` class for downstream use.
@@ -37,5 +77,5 @@ If you find `leidenAlg` useful for your publication, please cite:
 ```
 Peter Kharchenko, Viktor Petukhov and Evan Biederstedt (2021).
 leidenAlg: Implements the Leiden Algorithm via an R Interface. R
-package version 1.0.0. https://github.com/kharchenkolab/leidenAlg
+package version 1.0.1. https://github.com/kharchenkolab/leidenAlg
 ```
