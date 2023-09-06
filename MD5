@@ -1,9 +1,9 @@
-6e8a50ed67afb4a19560cee069232397 *DESCRIPTION
+4176f0eb518e207a6b56aa15b096b0e6 *DESCRIPTION
 cb14ead0c545d6aff9ef5b6f7d7119fa *NAMESPACE
 54f798c059a8c287eb8fd005dbc6ab7b *R/RcppExports.R
-8dc846af9a802d1562fc8e73d15b6b56 *R/communities.R
+bb5528f32dffc32b43e1692894052498 *R/communities.R
 f900d4b0e8687a1c4ee619e50b3dc873 *R/data.R
-d8c125eb3fdff2a841c39532d7cc160e *README.md
+1256e73e2a5ea619d1ae32453ffd121c *README.md
 a59fb5db2333062498c58fb450befc7e *data/exampleGraph.rda
 fedd22b3c3990e703c1924859e5325f4 *inst/COPYRIGHTS
 93f5444fce9e84567ecd3f5230be8b87 *man/as.dendrogram.fakeCommunities.Rd
@@ -12,7 +12,7 @@ a91e8ad6e2317132f104564acc141067 *man/exampleGraph.Rd
 f61b8024d8359df5eaeea3dccd9af236 *man/find_partition_rcpp.Rd
 6cb458bdbffa889cfb65b5f7f9c4f370 *man/find_partition_with_rep.Rd
 e613da33ed79a2e841ac76ea2aa1f717 *man/find_partition_with_rep_rcpp.Rd
-81286f6ed442713f93ccc9e4ee501f58 *man/leiden.community.Rd
+cff06be66e4a45c36e3f732b229200e8 *man/leiden.community.Rd
 875f84dde8b68b81514e6ef3c34e015c *man/membership.fakeCommunities.Rd
 712dbe8d1c87e1bcdf023b902ba6fdfb *man/rleiden.community.Rd
 1ceb2396756558209a41afdf141b6770 *src/Makevars
