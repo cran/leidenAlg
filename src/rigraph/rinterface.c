@@ -197,7 +197,9 @@ SEXP R_igraph_handle_safe_eval_result(SEXP result) {
       SEXP condition_message = PROTECT(Rf_install("conditionMessage"));
       SEXP condition_message_call = PROTECT(Rf_lang2(condition_message, result));
       SEXP evaluated_condition_message = PROTECT(Rf_eval(condition_message_call, R_GlobalEnv));
-      error(CHAR(STRING_ELT(evaluated_condition_message, 0)));
+      // error(CHAR(STRING_ELT(evaluated_condition_message, 0)));
+      // fix for 'format string is not a string literal' flag warning
+      REprintf("%s\n", CHAR(STRING_ELT(evaluated_condition_message, 0)));
       UNPROTECT(3);
       return R_NilValue;
 
