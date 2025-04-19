@@ -94,8 +94,8 @@ int igraph_progressf(const char *message, igraph_real_t percent, void *data,
                      ...) {
     va_list ap;
     va_start(ap, data);
-    vsnprintf(igraph_i_progressmsg_buffer,
-              sizeof(igraph_i_progressmsg_buffer) / sizeof(char), message, ap);
+    //vsnprintf(igraph_i_progressmsg_buffer,
+    //          sizeof(igraph_i_progressmsg_buffer) / sizeof(char), message, ap);
     return igraph_progress(igraph_i_progressmsg_buffer, percent, data);
 }
 
@@ -125,8 +125,8 @@ int igraph_progressf(const char *message, igraph_real_t percent, void *data,
 int igraph_progress_handler_stderr(const char *message, igraph_real_t percent,
                                    void* data) {
     IGRAPH_UNUSED(data);
-    fputs(message, stderr);
-    fprintf(stderr, "%.1f percent ready.\n", percent);
+    // fputs(message, stderr);
+    // fprintf(stderr, "%.1f percent ready.\n", percent);
     return IGRAPH_SUCCESS;
 }
 #endif

@@ -41,13 +41,13 @@ void debug(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
 #ifdef IGRAPH_FASTCOMM_DEBUG
-    vfprintf(stderr, fmt, args);
+    //vfprintf(stderr, fmt, args);
 #endif
     va_end(args);
 }
 #else
 #ifdef IGRAPH_FASTCOMM_DEBUG
-    #define debug(...) fprintf(stderr, __VA_ARGS__)
+    //#define debug(...) fprintf(stderr, __VA_ARGS__)
 #else
     #define debug(...)
 #endif

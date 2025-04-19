@@ -1,7 +1,7 @@
 Package: leidenAlg
 Type: Package
 Title: Implements the Leiden Algorithm via an R Interface
-Version: 1.1.4
+Version: 1.1.5
 Authors@R: c(person("Peter", "Kharchenko", email = "Peter_Kharchenko@hms.harvard.edu", role = c("aut")), 
              person("Viktor", "Petukhov", email = "viktor.s.petukhov@ya.ru", role = c("aut")), 
              person("Yichen", "Wang", email = "wayichen@umich.edu", role=c("aut")),
@@ -36,6 +36,6 @@ Author: Peter Kharchenko [aut],
   Minh Van Nguyen [ctb],
   Evan Biederstedt [cre, aut]
 Maintainer: Evan Biederstedt <evan.biederstedt@gmail.com>
-Packaged: 2024-10-17 20:29:51 UTC; evanbiederstedt
+Packaged: 2025-04-19 19:26:23 UTC; evanbiederstedt
 Repository: CRAN
-Date/Publication: 2024-10-17 21:00:02 UTC
+Date/Publication: 2025-04-19 20:12:02 UTC

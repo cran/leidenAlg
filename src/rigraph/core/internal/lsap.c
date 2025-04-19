@@ -201,7 +201,7 @@ AP *ap_read_problem(char *file) {
 
     if (nrow != ncol) {
         /*
-          fprintf(stderr,"ap_read_problem: problem not quadratic\nrows =%d, cols = %d\n",nrow,ncol);
+          //fprintf(stderr,"ap_read_problem: problem not quadratic\nrows =%d, cols = %d\n",nrow,ncol);
         */
         IGRAPH_WARNINGF("ap_read_problem: problem not quadratic; rows = %d, cols = %d.", nrow, ncol);
         return NULL;
@@ -410,8 +410,8 @@ int ap_datamatrix(AP *p, double **m) {
 /*
 void ap_error(char *message)
 {
-    fprintf(stderr,"%s\n",message);
-    exit(1);
+    //fprintf(stderr,"%s\n",message);
+    // exit(1);
 }
 */
 

@@ -65,10 +65,10 @@
 static IGRAPH_NORETURN void igraph_abort() {
 #ifndef USING_R
 #ifdef IGRAPH_SANITIZER_AVAILABLE
-    fprintf(stderr, "\nStack trace:\n");
+   //fprintf(stderr, "\nStack trace:\n");
     __sanitizer_print_stack_trace();
 #endif
-    abort();
+    //abort();
 #else
     /* R's error() function is declared 'noreturn'. We use it here to satisfy the compiler that igraph_abort() does indeed not return. */
     error("igraph_abort() was called. This should never happen. Please report this as an igraph bug, along with steps to reproduce it.");
@@ -178,23 +178,23 @@ int igraph_errorf(const char *reason, const char *file, int line,
                   int igraph_errno, ...) {
     va_list ap;
     va_start(ap, igraph_errno);
-    vsnprintf(igraph_i_errormsg_buffer,
-              sizeof(igraph_i_errormsg_buffer) / sizeof(char), reason, ap);
+    //vsnprintf(igraph_i_errormsg_buffer,
+    //          sizeof(igraph_i_errormsg_buffer) / sizeof(char), reason, ap);
     return igraph_error(igraph_i_errormsg_buffer, file, line, igraph_errno);
 }
 
 int igraph_errorvf(const char *reason, const char *file, int line,
                    int igraph_errno, va_list ap) {
-    vsnprintf(igraph_i_errormsg_buffer,
-              sizeof(igraph_i_errormsg_buffer) / sizeof(char), reason, ap);
+    //vsnprintf(igraph_i_errormsg_buffer,
+    //          sizeof(igraph_i_errormsg_buffer) / sizeof(char), reason, ap);
     return igraph_error(igraph_i_errormsg_buffer, file, line, igraph_errno);
 }
 
 #ifndef USING_R
 void igraph_error_handler_abort(const char *reason, const char *file,
                                 int line, int igraph_errno) {
-    fprintf(stderr, "Error at %s:%i : %s - %s.\n",
-            file, line, reason, igraph_strerror(igraph_errno));
+    // fprintf(stderr, "Error at %s:%i : %s - %s.\n",
+    //        file, line, reason, igraph_strerror(igraph_errno));
     igraph_abort();
 }
 #endif
@@ -212,8 +212,8 @@ void igraph_error_handler_ignore(const char *reason, const char *file,
 #ifndef USING_R
 void igraph_error_handler_printignore(const char *reason, const char *file,
                                       int line, int igraph_errno) {
-    fprintf(stderr, "Error at %s:%i : %s - %s.\n",
-            file, line, reason, igraph_strerror(igraph_errno));
+    //fprintf(stderr, "Error at %s:%i : %s - %s.\n",
+    //        file, line, reason, igraph_strerror(igraph_errno));
     IGRAPH_FINALLY_FREE();
 }
 #endif
@@ -312,7 +312,7 @@ void igraph_warning_handler_ignore(const char *reason, const char *file,
 void igraph_warning_handler_print(const char *reason, const char *file,
                                   int line, int igraph_errno) {
     IGRAPH_UNUSED(igraph_errno);
-    fprintf(stderr, "Warning at %s:%i : %s\n", file, line, reason);
+//    fprintf(stderr, "Warning at %s:%i : %s\n", file, line, reason);
 }
 #endif
 
@@ -333,8 +333,8 @@ int igraph_warningf(const char *reason, const char *file, int line,
                     int igraph_errno, ...) {
     va_list ap;
     va_start(ap, igraph_errno);
-    vsnprintf(igraph_i_warningmsg_buffer,
-              sizeof(igraph_i_warningmsg_buffer) / sizeof(char), reason, ap);
+    //vsnprintf(igraph_i_warningmsg_buffer,
+    //          sizeof(igraph_i_warningmsg_buffer) / sizeof(char), reason, ap);
     return igraph_warning(igraph_i_warningmsg_buffer, file, line,
                           igraph_errno);
 }
@@ -358,7 +358,7 @@ igraph_fatal_handler_t *igraph_set_fatal_handler(igraph_fatal_handler_t *new_han
 
 #ifndef USING_R
 void igraph_fatal_handler_abort(const char *reason, const char *file, int line) {
-    fprintf(stderr, "Fatal error at %s:%i : %s\n", file, line, reason);
+//    fprintf(stderr, "Fatal error at %s:%i : %s\n", file, line, reason);
     igraph_abort();
 }
 #endif
@@ -379,7 +379,7 @@ void igraph_fatal(const char *reason, const char *file, int line) {
 void igraph_fatalf(const char *reason, const char *file, int line, ...) {
     va_list ap;
     va_start(ap, line);
-    vsnprintf(igraph_i_fatalmsg_buffer, sizeof(igraph_i_fatalmsg_buffer) / sizeof(char), reason, ap);
+    // vsnprintf(igraph_i_fatalmsg_buffer, sizeof(igraph_i_fatalmsg_buffer) / sizeof(char), reason, ap);
     va_end(ap);
     igraph_fatal(igraph_i_fatalmsg_buffer, file, line);
 }
