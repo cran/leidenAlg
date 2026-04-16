@@ -23,13 +23,19 @@
 
 #include "igraph.h"
 
+
 #include <R.h>
-#include <Rinternals.h>
+#include <Rversion.h>
 #include <Rdefines.h>
+
+#include <R_ext/Visibility.h>
+#include <R_ext/Altrep.h>
 
 #include "rinterface.h"
 
 #include <stdlib.h>
+
+#include <Rinternals.h>
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++C */
 /*                                                               C */
@@ -164,6 +170,7 @@ int igraphhcass2(int *n, int *ia, int *ib,
   return 0;
 } /* hcass2_ */
 
+
 SEXP R_igraph_psumtree_draw(SEXP plength, SEXP howmany, SEXP prob) {
   SEXP result;
   int length=INTEGER(plength)[0];
@@ -263,16 +270,28 @@ SEXP R_igraph_identical_graphs(SEXP g1, SEXP g2, SEXP attrs) {
 
 SEXP R_igraph_graph_version(SEXP graph) {
   if (GET_LENGTH(graph) == 10 && isEnvironment(VECTOR_ELT(graph, 9))) {
+
+#if R_VERSION >= R_Version(4, 6, 0)
+    SEXP ver = R_getVarEx(install(R_IGRAPH_VERSION_VAR), VECTOR_ELT(graph, 9), TRUE, R_NilValue);
+    if (ver != R_UnboundValue) {
+      return ver;
+    } else {
+      return mkString("0.7.999");
+    }
+#else
     SEXP ver = findVar(install(R_IGRAPH_VERSION_VAR), VECTOR_ELT(graph, 9));
     if (ver != R_UnboundValue) {
       return ver;
     } else {
       return mkString("0.7.999");
     }
+#endif
   } else {
     return mkString("0.4.0");
   }
 }
+
+
 
 SEXP R_igraph_add_version_to_env(SEXP graph) {
   uuid_t my_id;
@@ -295,6 +314,12 @@ SEXP R_igraph_add_version_to_env(SEXP graph) {
   return graph;
 }
 
+
+//April 15 2026, v1.1.7
+//Cannot use ATTRIB(), SET_ATTRIB(), or allocSExp() for R version 4.6.0
+//Also, Remove lazyeval.c entirely, cf https://github.com/igraph/rigraph/commit/58f8a39e12585a3b5bd32cb7b994b5100e4d2135
+
+
 SEXP R_igraph_add_env(SEXP graph) {
   SEXP result = graph;
   int i;
@@ -307,11 +332,28 @@ SEXP R_igraph_add_env(SEXP graph) {
     for (i = 0; i < 9; i++) {
       SET_VECTOR_ELT(result, i, duplicate(VECTOR_ELT(graph, i)));
     }
-    SET_ATTRIB(result, duplicate(ATTRIB(graph)));
+    // v1.1.7 changes, SET_ATTRIB(result, duplicate(ATTRIB(graph)));
+    Rf_setAttrib(result, R_NamesSymbol, duplicate(Rf_getAttrib(graph, R_NamesSymbol)));
     SET_CLASS(result, duplicate(GET_CLASS(graph)));
   }
 
-  SET_VECTOR_ELT(result, 9, allocSExp(ENVSXP));
+  // v1.1.7 changes, SET_VECTOR_ELT(result, 9, allocSExp(ENVSXP));
+  // https://github.com/igraph/rigraph/commit/d64ef7a7204ee0a9a192f8d8c000eabc46ac12fd
+
+  // Get the base namespace
+  SEXP base_ns = PROTECT(R_FindNamespace(Rf_mkString("base"))); px++;
+  // Get the emptyenv function
+#if R_VERSION < R_Version(4,5,0)
+  SEXP empty_env_fun = PROTECT(Rf_findVarInFrame(base_ns, Rf_install("emptyenv"))); px++;
+#else
+  SEXP empty_env_fun = PROTECT(R_getVarEx(Rf_install("emptyenv"), base_ns, TRUE, R_UnboundValue)); px++;
+#endif
+  // Call emptyenv()
+  SEXP empty_env = PROTECT(Rf_eval(Rf_lang1(empty_env_fun), R_GlobalEnv)); px++;
+  // Evaluate the call
+  SEXP env = PROTECT(R_NewEnv(empty_env, 0, 0)); px++;
+
+  SET_VECTOR_ELT(result, 9, env);
 
   uuid_generate(my_id);
   uuid_unparse_lower(my_id, my_id_chr);
@@ -329,6 +371,12 @@ SEXP R_igraph_add_env(SEXP graph) {
   return result;
 }
 
+
+
 SEXP R_igraph_get_graph_id(SEXP graph) {
+#if R_VERSION >= R_Version(4, 6, 0)
+  return R_getVar(install("myid"), VECTOR_ELT(graph, 9), TRUE);
+#else
   return findVar(install("myid"), VECTOR_ELT(graph, 9));
+#endif
 }

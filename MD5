@@ -1,9 +1,9 @@
-35c7ddb13c62a47f0ae59fa9786053de *DESCRIPTION
+b24c97419fa56c00c9f7962430270cef *DESCRIPTION
 cb14ead0c545d6aff9ef5b6f7d7119fa *NAMESPACE
 54f798c059a8c287eb8fd005dbc6ab7b *R/RcppExports.R
 bb5528f32dffc32b43e1692894052498 *R/communities.R
 f900d4b0e8687a1c4ee619e50b3dc873 *R/data.R
-505a2d84d5c927e1ba6503a3b82ca32b *README.md
+8a792c13873bf8f56b36507a0c320ff6 *README.md
 a59fb5db2333062498c58fb450befc7e *data/exampleGraph.rda
 fedd22b3c3990e703c1924859e5325f4 *inst/COPYRIGHTS
 93f5444fce9e84567ecd3f5230be8b87 *man/as.dendrogram.fakeCommunities.Rd
@@ -44,8 +44,8 @@ f1b1519381e7cb15f3478c9082b6cd70 *src/leidenalg/include/RBConfigurationVertexPar
 6212030de8e8ccb2f393fdddbc9ea671 *src/leidenalg/include/ResolutionParameterVertexPartition.h
 9522d2c9443570321349704ac29fd36b *src/leidenalg/include/SignificanceVertexPartition.h
 c21d4777bf7aa82e198560dd81afd587 *src/leidenalg/include/SurpriseVertexPartition.h
-44627e375e2ea7893f9a5bad7366cdc4 *src/rigraph/Makefile
-91b0c5dce67a68682e770b32abc22fdd *src/rigraph/Makefile.win
+4130f1bca141b457bb492a287b034a6d *src/rigraph/Makefile
+a366b66b3b1645202e2c758ae52a128e *src/rigraph/Makefile.win
 4394c6d534fe0aa0b2e9c80ce125cd9c *src/rigraph/core/centrality/betweenness.c
 3ea7553175060f61197728790834b496 *src/rigraph/core/centrality/centrality_other.c
 b5d4ecf66934ba6951b2d46de5882208 *src/rigraph/core/centrality/centralization.c
@@ -521,10 +521,9 @@ e5e9b7d86a82521a9da3e2c81afc6456 *src/rigraph/include/igraph_vector_ptr.h
 fc85f88e706ec014c6c3012b335d7e21 *src/rigraph/include/igraph_version.h.in
 b2782363c5cdbf31d263a6e9e1c83528 *src/rigraph/include/igraph_visitor.h
 3b8e1e023f838bf485e89c7927464788 *src/rigraph/init.c
-ef9170b9e7c2d1bedf611cedcc79fd20 *src/rigraph/lazyeval.c
-cc5f6834ddf672dc2385d461cec5b730 *src/rigraph/rinterface.c
+1c04021d8e1ed2b9e2e0e7b65953ff0f *src/rigraph/rinterface.c
 0e0ec7c0ddcac4f48f8f9a3b6ab30a5b *src/rigraph/rinterface.h
-a40791b2fae11e292b3f32e07459b452 *src/rigraph/rinterface_extra.c
+4136486eedc70028de0ad56d4183e9fc *src/rigraph/rinterface_extra.c
 0bbb651bad595964ccea1e21239cd548 *src/rigraph/rrandom.c
 6f3f9e23acd3671ca735f29072089975 *src/rigraph/rrandom.h
 ae2b99c6930b9d78a067b9f304e4d021 *src/rigraph/vendor/arpack/debug.h

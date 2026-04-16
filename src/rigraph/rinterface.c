@@ -27,9 +27,11 @@
 #include "config.h"
 
 #include <R.h>
+#include <Rversion.h>
 #include <Rinternals.h>
 #include <Rdefines.h>
 #include <R_ext/Visibility.h>
+#include <R_ext/Altrep.h>
 
 #include "rinterface.h"
 #include "rrandom.h"
@@ -37,7 +39,32 @@
 #include "init.c"               /* registration table */
 
 #include <stdio.h>
+#include <inttypes.h>
 
+
+enum igraph_t_idx {
+  igraph_t_idx_n = 0,
+  igraph_t_idx_directed = 1,
+  igraph_t_idx_from = 2,
+  igraph_t_idx_to = 3,
+  igraph_t_idx_oi = 4,
+  igraph_t_idx_ii = 5,
+  igraph_t_idx_os = 6,
+  igraph_t_idx_is = 7,
+  igraph_t_idx_attr = 8,
+  igraph_t_idx_env = 9,
+  igraph_t_idx_max = 10,
+};
+
+// format versions
+enum igraph_versions {
+  ver_0_1_1,   // 0.1.1
+  ver_0_4,     // 0.4
+  ver_0_7_999, // 0.7.999
+  ver_0_8,     // 0.8
+  ver_1_5_0,   // 1.5.0
+  ver_current = ver_1_5_0
+};
 
 void igraph_free(void *p);
 
@@ -2774,6 +2801,9 @@ SEXP R_igraph_strvector_to_SEXP(const igraph_strvector_t *m) {
   return result;
 }
 
+
+
+
 SEXP R_igraph_to_SEXP(const igraph_t *graph) {
 
   SEXP result;
@@ -2818,6 +2848,8 @@ SEXP R_igraph_to_SEXP(const igraph_t *graph) {
   UNPROTECT(1);
   return result;
 }
+
+
 
 SEXP R_igraph_vectorlist_to_SEXP(const igraph_vector_ptr_t *ptr) {
   SEXP result;
