@@ -1,9 +1,9 @@
-b24c97419fa56c00c9f7962430270cef *DESCRIPTION
+db48dcffb4d9ac08187257ceffee8921 *DESCRIPTION
 cb14ead0c545d6aff9ef5b6f7d7119fa *NAMESPACE
 54f798c059a8c287eb8fd005dbc6ab7b *R/RcppExports.R
 bb5528f32dffc32b43e1692894052498 *R/communities.R
 f900d4b0e8687a1c4ee619e50b3dc873 *R/data.R
-8a792c13873bf8f56b36507a0c320ff6 *README.md
+a49b230a47cb1863a425d2d8413ae461 *README.md
 a59fb5db2333062498c58fb450befc7e *data/exampleGraph.rda
 fedd22b3c3990e703c1924859e5325f4 *inst/COPYRIGHTS
 93f5444fce9e84567ecd3f5230be8b87 *man/as.dendrogram.fakeCommunities.Rd
@@ -529,7 +529,7 @@ b2782363c5cdbf31d263a6e9e1c83528 *src/rigraph/include/igraph_visitor.h
 ae2b99c6930b9d78a067b9f304e4d021 *src/rigraph/vendor/arpack/debug.h
 bc623b699b4c2d87ac2c4a0b82002276 *src/rigraph/vendor/arpack/dgetv0.f
 ae7917a56c25a07b9860819bebf32f40 *src/rigraph/vendor/arpack/dlaqrb.f
-e2a779cf6995db8c8f7decb5f5a34865 *src/rigraph/vendor/arpack/dmout.f
+ecd5884496aae11b929f0a2cae3713e1 *src/rigraph/vendor/arpack/dmout.f
 0e11f9b76a7e46477224bebd83080f25 *src/rigraph/vendor/arpack/dnaitr.f
 7d4f11d47644fbbf52ed09e58e174dc4 *src/rigraph/vendor/arpack/dnapps.f
 22de713abf558787ed9c5b33eb4b83d4 *src/rigraph/vendor/arpack/dnaup2.f
@@ -552,7 +552,7 @@ a85a6c40eddf62d7ea57f2af18e15d57 *src/rigraph/vendor/arpack/dsortc.f
 d4ead7e7ae03b16c06bc2eee64bc99fd *src/rigraph/vendor/arpack/dstatn.f
 40dc3cb9ded24c012fd5810e6175d7f9 *src/rigraph/vendor/arpack/dstats.f
 de4792cfaab6cdda8d557902c2310fcc *src/rigraph/vendor/arpack/dstqrb.f
-059e044417ad33569e5a472857c4cc03 *src/rigraph/vendor/arpack/dvout.f
+6515c6544b8bb0922d51ed31941f883b *src/rigraph/vendor/arpack/dvout.f
 c90250f566617eef7724e2a2a7351b38 *src/rigraph/vendor/arpack/ivout.f
 8a97c89bb8575d1eb27407e1dc3887f9 *src/rigraph/vendor/arpack/second.f
 b5163c86a9a4ff980ad7a02f9303d2b7 *src/rigraph/vendor/arpack/stat.h
